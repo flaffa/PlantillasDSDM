@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="diagramaClases" nsURI="http://www.example.org/diagramaClases"
+    nsPrefix="diagramaClases">
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramadeClases">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paquetes_contenidos" upperBound="-1"
+        eType="#//Paquete" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artefactos_contenidos"
+        lowerBound="1" eType="#//Artefacto" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configuracion_contenido"
+        lowerBound="1" eType="#//Configuracion" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metodos_contenidos" upperBound="-1"
+        eType="#//Metodos" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="herencias_contenidas" upperBound="-1"
+        eType="#//Herencia" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atributos_contenidos" upperBound="-1"
+        eType="#//Atributos" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relacion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen_relacion" eType="#//Clase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino_relacion" eType="#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo_relacion" eType="#//Tipo_Relacion"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo_multiplicidad" eType="#//Tipo_Multiplicidad"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Interface" eSuperTypes="#//Classifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Clase" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relaciones_contenidas"
+        upperBound="-1" eType="#//Relacion" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="es_abstracta" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="es_final" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementacion_contenida"
+        upperBound="-1" eType="#//Implementacion" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tieneABM" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parametros">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Tipo_Datos" eType="#//Tipos_Datos"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Atributos" eSuperTypes="#//Elementos_Contenidos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Tipo_Datos" eType="#//Tipos_Datos"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Metodos" eSuperTypes="#//Elementos_Contenidos">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parametros_contenidos"
+        upperBound="-1" eType="#//Parametros" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Tipo_retorno" eType="#//Tipo_Retorno"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="es_abstracto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atributos_contenidos" upperBound="-1"
+        eType="#//Atributos" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Herencia">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen_herencia" eType="#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino_herencia" eType="#//Classifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Tipos_Datos">
+    <eLiterals name="byte"/>
+    <eLiterals name="short" value="1"/>
+    <eLiterals name="int" value="2"/>
+    <eLiterals name="long" value="3"/>
+    <eLiterals name="float" value="4"/>
+    <eLiterals name="double" value="5"/>
+    <eLiterals name="boolean" value="6"/>
+    <eLiterals name="char" value="7"/>
+    <eLiterals name="String" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Tipo_Visibilidad">
+    <eLiterals name="private"/>
+    <eLiterals name="public" value="1"/>
+    <eLiterals name="protected" value="2"/>
+    <eLiterals name="package" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Tipo_Retorno">
+    <eLiterals name="byte"/>
+    <eLiterals name="short" value="1"/>
+    <eLiterals name="int" value="2"/>
+    <eLiterals name="long" value="3"/>
+    <eLiterals name="float" value="4"/>
+    <eLiterals name="double" value="5"/>
+    <eLiterals name="boolean" value="6"/>
+    <eLiterals name="char" value="7"/>
+    <eLiterals name="String" value="8"/>
+    <eLiterals name="void" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Implementacion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino_interface" eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen_clase" eType="#//Clase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Elementos_Contenidos" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo_visibilidad" eType="#//Tipo_Visibilidad"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="es_final" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="es_static" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Tipo_Relacion">
+    <eLiterals name="composicion"/>
+    <eLiterals name="agregacion" value="1"/>
+    <eLiterals name="asociacion_unidireccional" value="2"/>
+    <eLiterals name="asociacion_bidireccional" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Tipo_Multiplicidad">
+    <eLiterals name="uno_a_uno"/>
+    <eLiterals name="uno_a_muchos" value="1"/>
+    <eLiterals name="muchos_a_muchos" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Paquete">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier_contenido" upperBound="-1"
+        eType="#//Classifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paquetes_incluidos" upperBound="-1"
+        eType="#//Paquete"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Artefacto">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="groupID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="artefactID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasedeDatos" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreDB" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ORMRelacional">
+    <eLiterals name="Hibernate"/>
+    <eLiterals name="EclipseLink" value="1"/>
+    <eLiterals name="None" value="4"/>
+    <eLiterals name="Sequelize" value="3"/>
+    <eLiterals name="TypeORM" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoRelacionales" eSuperTypes="#//BasedeDatos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoDB" eType="#//BDNoRelacionales"
+        defaultValueLiteral="None"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ORM" eType="#//ORMNoRelacional"
+        defaultValueLiteral="None"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relacionales" eSuperTypes="#//BasedeDatos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoBD" eType="#//BDRelacionales"
+        defaultValueLiteral="None"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ORM" eType="#//ORMRelacional"
+        defaultValueLiteral="None"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BDRelacionales">
+    <eLiterals name="MySQL"/>
+    <eLiterals name="Postgres" value="1"/>
+    <eLiterals name="MariaDB" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BDNoRelacionales">
+    <eLiterals name="MongoDB"/>
+    <eLiterals name="DynamoDB" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ORMNoRelacional">
+    <eLiterals name="Sequelize"/>
+    <eLiterals name="TypeORM" value="1"/>
+    <eLiterals name="Mongoose" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Lenguaje">
+    <eLiterals name="Java"/>
+    <eLiterals name="Python" value="1"/>
+    <eLiterals name="JavaScript" value="2"/>
+    <eLiterals name="Node" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Configuracion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="#//Lenguaje"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frontEnd" eType="#//FrameworkVistas"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backEnd" eType="#//FrameworkServer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="plantillas" eType="#//MotoresPlantilla"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="basededatos_contenida"
+        lowerBound="1" eType="#//BasedeDatos" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreApp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="puertoServidor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FrameworkServer">
+    <eLiterals name="SpringBoot"/>
+    <eLiterals name="Django" value="1"/>
+    <eLiterals name="Express" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FrameworkVistas">
+    <eLiterals name="React"/>
+    <eLiterals name="Angular" value="1"/>
+    <eLiterals name="Vue" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MotoresPlantilla">
+    <eLiterals name="pug"/>
+    <eLiterals name="thymeleaf" value="1"/>
+    <eLiterals name="ejs" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

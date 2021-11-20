@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramaClases:DiagramadeClases
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:diagramaClases="http://www.example.org/diagramaClases"
+    xsi:schemaLocation="http://www.example.org/diagramaClases diagramaClases.ecore">
+  <paquetes_contenidos
+      nombre="appweb">
+    <classifier_contenido
+        xsi:type="diagramaClases:Clase"
+        nombre="Persona"/>
+  </paquetes_contenidos>
+  <artefactos_contenidos
+      nombre="appweb"
+      groupID="appweb"
+      artefactID="com.example"
+      description="node"
+      version="1"/>
+  <configuracion_contenido
+      nombre="Node"
+      version="0.0.1"
+      backEnd="Express"
+      plantillas="ejs"
+      nombreApp="appweb"
+      puertoServidor="3000">
+    <basededatos_contenida
+        xsi:type="diagramaClases:Relacionales"
+        username="admin"
+        password="root"
+        port="9000"
+        nombreDB="PersonaBD"
+        tipoBD="MySQL"
+        ORM="Sequelize"/>
+  </configuracion_contenido>
+</diagramaClases:DiagramadeClases>

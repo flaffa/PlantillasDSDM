@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramaClases:DiagramadeClases
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:diagramaClases="http://www.example.org/diagramaClases"
+    xsi:schemaLocation="http://www.example.org/diagramaClases diagramaClases.ecore">
+  <paquetes_contenidos
+      nombre="Persona">
+    <classifier_contenido
+        xsi:type="diagramaClases:Clase"
+        nombre="Persona"
+        tieneABM="true">
+      <herencias_contenidas
+          origen_herencia="//@paquetes_contenidos.0/@classifier_contenido.1"
+          destino_herencia="//@paquetes_contenidos.0/@classifier_contenido.0"/>
+    </classifier_contenido>
+    <classifier_contenido
+        xsi:type="diagramaClases:Clase"
+        nombre="Domicilio"
+        tieneABM="true"/>
+  </paquetes_contenidos>
+  <artefactos_contenidos
+      nombre="persona"
+      groupID="com.example"
+      artefactID="persona"
+      description="Demo Project for SpringBoot"
+      version="0.0.1-SNAPSHOT"/>
+  <configuracion_contenido
+      version="0.0.1-SNAPSHOT"
+      plantillas="thymeleaf"
+      nombreApp="persona"
+      puertoServidor="3000">
+    <basededatos_contenida
+        xsi:type="diagramaClases:Relacionales"
+        username="root"
+        password="root"
+        port="9000"
+        nombreDB="persona-dbv2"
+        tipoBD="MySQL"
+        ORM="Hibernate"/>
+  </configuracion_contenido>
+</diagramaClases:DiagramadeClases>
