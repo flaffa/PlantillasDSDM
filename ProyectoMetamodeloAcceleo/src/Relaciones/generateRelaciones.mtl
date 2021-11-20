@@ -1,0 +1,92 @@
+[comment encoding = UTF-8 /]
+[module generateRelaciones('http://www.example.org/diagramaClases')]
+
+
+[template public generateRelaciones(c : Clase)]
+[for (r : Relacion | c.relaciones_contenidas)]
+	[if (r.tipo_relacion=Tipo_Relacion::asociacion_unidireccional)]
+		[if (r.tipo_multiplicidad=Tipo_Multiplicidad::uno_a_uno)]
+			@OneToOne (cascade = CascadeType.ALL)
+			@JoinColumn (name = "FK_[r.destino_relacion.nombre/]")
+			private [r.destino_relacion.nombre/] [r.destino_relacion.nombre.toLowerFirst()/];
+		[/if]
+		[if (r.tipo_multiplicidad=Tipo_Multiplicidad::uno_a_muchos)]
+			@OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
+			@JoinTable (name = "[r.origen_relacion.nombre/]_[r.destino_relacion.nombre/]", joinColumns = @JoinColumn (name = "[r.origen_relacion.nombre/]"), inverseJoinColumns = @JoinColumn (name = "[r.destino_relacion.nombre/]") )			
+			private List<[r.destino_relacion.nombre/]> [r.destino_relacion.nombre.toLowerFirst()/] = new ArrayList<[r.destino_relacion.nombre/]>();
+		[/if]		
+		[if (r.tipo_multiplicidad=Tipo_Multiplicidad::muchos_a_muchos)]
+			@ManyToMany (cascade = CascadeType.ALL)
+			@JoinTable (name = "[r.origen_relacion.nombre/]_[r.destino_relacion.nombre/]", joinColumns = @JoinColumn (name = "[r.origen_relacion.nombre/]"), inverseJoinColumns = @JoinColumn (name = "[r.destino_relacion.nombre/]") )			
+			private List<[r.destino_relacion.nombre/]> [r.destino_relacion.nombre.toLowerFirst()/] = new ArrayList<[r.destino_relacion.nombre/]>();
+		[/if]
+	[/if]
+	[if (r.tipo_relacion=Tipo_Relacion::asociacion_bidireccional)]
+		[if (r.tipo_multiplicidad=Tipo_Multiplicidad::uno_a_uno)]
+		[if (r.destino_relacion.nombre= c.nombre)]
+			@OneToOne (mappedBy = "[r.nombre/]")
+			private [r.origen_relacion.nombre/] [r.origen_relacion.nombre.toLowerFirst()/];
+		[else]
+			@OneToOne (mappedBy = "[r.nombre/]")
+			private [r.destino_relacion.nombre/] [r.destino_relacion.nombre.toLowerFirst()/];
+		[/if]			
+		[/if]
+		[if (r.tipo_multiplicidad=Tipo_Multiplicidad::uno_a_muchos)]
+			[if (r.destino_relacion.nombre= c.nombre)]
+			@ManyToOne (cascade = CascadeType.ALL)
+			@JoinColumn (name = "FK_[r.origen_relacion.nombre/]")
+			private [r.origen_relacion.nombre/] [r.origen_relacion.nombre.toLowerFirst()/];
+		[else]
+			@OneToMany (mappedBy = "[r.nombre/]", cascade = CascadeType.ALL, orphanRemoval=true)
+			private List<[r.destino_relacion.nombre/]> [r.destino_relacion.nombre.toLowerFirst()/] = new ArrayList<[r.destino_relacion.nombre/]>();
+		[/if]	
+		[/if]
+		[if (r.tipo_multiplicidad=Tipo_Multiplicidad::muchos_a_muchos)]
+		[if (r.destino_relacion.nombre= c.nombre)]
+		@ManyToMany (mappedBy = "[r.nombre/]")
+		private List<[r.origen_relacion.nombre/]> [r.origen_relacion.nombre.toLowerFirst()/] = new ArrayList<[r.origen_relacion.nombre/]>();
+		[else]
+		@ManyToMany (cascade = CascadeType.MERGE)
+		@JoinTable (name = "[r.origen_relacion.nombre/]_[r.destino_relacion.nombre/]", joinColumns = @JoinColumn (name = "[r.origen_relacion.nombre/]"), inverseJoinColumns = @JoinColumn (name = "[r.destino_relacion.nombre/]") )			
+		@Default
+		@ToString.Exclude
+		private List<[r.destino_relacion.nombre/]> [r.destino_relacion.nombre.toLowerFirst()/] = new ArrayList<[r.destino_relacion.nombre/]>();
+		[/if]
+		[/if]
+	[/if]
+	[if (r.tipo_relacion=Tipo_Relacion::agregacion)]
+		[if (r.tipo_multiplicidad=Tipo_Multiplicidad::uno_a_uno)]
+			@OneToOne (cascade = CascadeType.ALL)
+			@JoinColumn (name = "FK_[r.destino_relacion.nombre/]")
+			private [r.destino_relacion.nombre/] [r.destino_relacion.nombre.toLowerFirst()/];
+		[/if]
+		[if (r.tipo_multiplicidad=Tipo_Multiplicidad::uno_a_muchos)]
+			@OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
+			@JoinTable (name = "[r.origen_relacion.nombre/]_[r.destino_relacion.nombre/]", joinColumns = @JoinColumn (name = "[r.origen_relacion.nombre/]"), inverseJoinColumns = @JoinColumn (name = "[r.destino_relacion.nombre/]") )			
+			private List<[r.destino_relacion.nombre/]> [r.destino_relacion.nombre.toLowerFirst()/] = new ArrayList<[r.destino_relacion.nombre/]>();
+		[/if]		
+		[if (r.tipo_multiplicidad=Tipo_Multiplicidad::muchos_a_muchos)]
+			@ManyToMany (cascade = CascadeType.ALL)
+			@JoinTable (name = "[r.origen_relacion.nombre/]_[r.destino_relacion.nombre/]", joinColumns = @JoinColumn (name = "[r.origen_relacion.nombre/]"), inverseJoinColumns = @JoinColumn (name = "[r.destino_relacion.nombre/]") )			
+			private List<[r.destino_relacion.nombre/]> [r.destino_relacion.nombre.toLowerFirst()/] = new ArrayList<[r.destino_relacion.nombre/]>();
+		[/if]	
+	[/if]
+	[if (r.tipo_relacion=Tipo_Relacion::composicion)]
+		[if (r.tipo_multiplicidad=Tipo_Multiplicidad::uno_a_uno)]
+			@OneToOne (cascade = CascadeType.ALL)
+			@JoinColumn (name = "FK_[r.destino_relacion.nombre/]")
+			private [r.destino_relacion.nombre/] [r.destino_relacion.nombre.toLowerFirst()/] = new[r.destino_relacion.nombre/]; 
+		[/if]
+		[if (r.tipo_multiplicidad=Tipo_Multiplicidad::uno_a_muchos)]
+			@OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
+			@JoinTable (name = "[r.origen_relacion.nombre/]_[r.destino_relacion.nombre/]", joinColumns = @JoinColumn (name = "[r.origen_relacion.nombre/]"), inverseJoinColumns = @JoinColumn (name = "[r.destino_relacion.nombre/]") )			
+			private List<[r.destino_relacion.nombre/]> [r.destino_relacion.nombre.toLowerFirst()/] = new ArrayList<[r.destino_relacion.nombre/]>();
+		[/if]		
+		[if (r.tipo_multiplicidad=Tipo_Multiplicidad::muchos_a_muchos)]
+			@ManyToMany (cascade = CascadeType.ALL)
+			@JoinTable (name = "[r.origen_relacion.nombre/]_[r.destino_relacion.nombre/]", joinColumns = @JoinColumn (name = "[r.origen_relacion.nombre/]"), inverseJoinColumns = @JoinColumn (name = "[r.destino_relacion.nombre/]") )			
+			private List<[r.destino_relacion.nombre/]> [r.destino_relacion.nombre.toLowerFirst()/] = new ArrayList<[r.destino_relacion.nombre/]>();
+		[/if]	
+	[/if]
+[/for]
+[/template]

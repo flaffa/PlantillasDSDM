@@ -1,0 +1,59 @@
+[comment encoding = UTF-8 /]
+[module generateMetodosImplementados('http://www.example.org/diagramaClases')]
+[import generateMetodo/]
+[import generateParametro/]
+
+[template public generateMetodosImplementados(c : Clase)]
+[for (i : Interface | c.implementacion_contenida.destino_interface)]
+[for (m : Metodos | i.metodos_contenidos)]
+[if (m.es_static)]
+	static [m.Tipo_retorno/] [m.nombre/]([generateParametro(m)/]){
+	[for (a : Atributos | m.atributos_contenidos)]
+		[a.Tipo_Datos/] [a.nombre/];
+	[/for]
+	[if (m.Tipo_retorno.toString() = 'boolean')]
+		return true;
+	[/if]
+	[if (m.Tipo_retorno.toString() = 'String')]
+		return null;
+	[/if]
+	[if (m.Tipo_retorno.toString() = 'int' or m.Tipo_retorno.toString() = 'byte' or m.Tipo_retorno.toString() = 'short' or m.Tipo_retorno.toString() = 'long' or m.Tipo_retorno.toString() = 'float' or m.Tipo_retorno.toString() = 'double' or m.Tipo_retorno.toString() = 'char')]
+		return 0;
+	[/if]
+	}
+[/if]	
+[if (m.es_final)]
+	final [m.Tipo_retorno/] [m.nombre/]([generateParametro(m)/]){
+	[for (a : Atributos | m.atributos_contenidos)]
+		[a.Tipo_Datos/] [a.nombre/];
+	[/for]
+	[if (m.Tipo_retorno.toString() = 'boolean')]
+		return true;
+	[/if]
+	[if (m.Tipo_retorno.toString() = 'String')]
+		return null;
+	[/if]
+	[if (m.Tipo_retorno.toString() = 'int' or m.Tipo_retorno.toString() = 'byte' or m.Tipo_retorno.toString() = 'short' or m.Tipo_retorno.toString() = 'long' or m.Tipo_retorno.toString() = 'float' or m.Tipo_retorno.toString() = 'double' or m.Tipo_retorno.toString() = 'char')]
+		return 0;
+	[/if]
+	}
+[/if]
+[if (not m.es_final and not m.es_static)]
+	[m.tipo_visibilidad/] [m.Tipo_retorno/] [m.nombre/]([generateParametro(m)/]){
+	[for (a : Atributos | m.atributos_contenidos)]
+		[a.Tipo_Datos/] [a.nombre/];
+	[/for]
+	[if (m.Tipo_retorno.toString() = 'boolean')]
+		return true;
+	[/if]
+	[if (m.Tipo_retorno.toString() = 'String')]
+		return null;
+	[/if]
+	[if (m.Tipo_retorno.toString() = 'int' or m.Tipo_retorno.toString() = 'byte' or m.Tipo_retorno.toString() = 'short' or m.Tipo_retorno.toString() = 'long' or m.Tipo_retorno.toString() = 'float' or m.Tipo_retorno.toString() = 'double' or m.Tipo_retorno.toString() = 'char')]
+		return 0;
+	[/if]
+	}
+[/if]
+[/for]
+[/for]
+[/template]
