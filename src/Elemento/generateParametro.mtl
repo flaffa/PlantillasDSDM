@@ -1,9 +1,0 @@
-[comment encoding = UTF-8 /]
-[module generateParametro('http://www.example.org/diagramaClases')]
-
-
-[template public generateParametro(m : Metodos)]
-[for (p : Parametros | m.parametros_contenidos) separator (',')]
-[p.Tipo_Datos/] [p.nombre/]	
-[/for]
-[/template]
