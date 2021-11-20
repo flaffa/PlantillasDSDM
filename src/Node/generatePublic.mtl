@@ -1,0 +1,25 @@
+[comment encoding = UTF-8 /]
+[module generatePublic('http://www.example.org/diagramaClases')]
+
+
+[template public generatePublic(d : DiagramadeClases)]
+[file ('/'+d.paquetes_contenidos.nombre+'/public/'+'images/'+'photo.jpg', false, 'UTF-8')]
+
+[/file]
+
+[file ('/'+d.paquetes_contenidos.nombre+'/public/'+'javascripts/'+'template.js', false, 'UTF-8')]
+
+[/file]
+
+[file ('/'+d.paquetes_contenidos.nombre+'/public/'+'stylesheets/'+'styles.css', false, 'UTF-8')]
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+[/file]
+[/template]
+

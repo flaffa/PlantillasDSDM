@@ -1,0 +1,2418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generateMetodosImplementados" nsURI="Relaciones::generateMetodosImplementados" startHeaderPosition="29" endHeaderPosition="130">
+    <input>
+      <takesTypesFrom href="http://www.example.org/diagramaClases#/"/>
+    </input>
+    <imports href="../Elemento/generateMetodo.emtl#/0"/>
+    <imports href="../Elemento/generateParametro.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateMetodosImplementados" visibility="Public">
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="mtl:IfBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;static "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Elementos_Contenidos/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
+            <body xsi:type="mtl:TemplateInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="../Elemento/generateParametro.emtl#/0/generateParametro"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="){&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipos_Datos"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateMetodosImplementados/%/%/%/%.7/a">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Atributos/Tipo_Datos"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateMetodosImplementados/%/%/%/%.7/a">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Elementos_Contenidos/nombre"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+              <loopVariable name="a">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+              </loopVariable>
+              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Atributos)">
+                <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/diagramaClases#//Metodos/atributos_contenidos"/>
+              </iterSet>
+            </body>
+            <body xsi:type="mtl:IfBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;return true;&#xA;"/>
+              <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                      <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                  </source>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="boolean">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+              </ifExpr>
+            </body>
+            <body xsi:type="mtl:IfBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;return null;&#xA;"/>
+              <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                      <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                  </source>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="String">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+              </ifExpr>
+            </body>
+            <body xsi:type="mtl:IfBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;return 0;&#xA;"/>
+              <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:OperationCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                        <source xsi:type="ocl.ecore:OperationCallExp">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                          <source xsi:type="ocl.ecore:OperationCallExp">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                              <source xsi:type="ocl.ecore:PropertyCallExp">
+                                <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                                <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                                </source>
+                                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                              </source>
+                            </source>
+                            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="int">
+                              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                            </argument>
+                            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                          </source>
+                          <argument xsi:type="ocl.ecore:OperationCallExp">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                              <source xsi:type="ocl.ecore:PropertyCallExp">
+                                <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                                <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                                </source>
+                                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                              </source>
+                            </source>
+                            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="byte">
+                              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                            </argument>
+                            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                          </argument>
+                          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                        </source>
+                        <argument xsi:type="ocl.ecore:OperationCallExp">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                            <source xsi:type="ocl.ecore:PropertyCallExp">
+                              <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                              <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                              </source>
+                              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                            </source>
+                          </source>
+                          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="short">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                          </argument>
+                          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                        </argument>
+                        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:OperationCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                        <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                          <source xsi:type="ocl.ecore:PropertyCallExp">
+                            <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                            <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                              <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                            </source>
+                            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                          </source>
+                        </source>
+                        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="long">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        </argument>
+                        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                            <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                        </source>
+                      </source>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="float">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                          <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                      </source>
+                    </source>
+                    <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="double">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                </source>
+                <argument xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <source xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                        <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                    </source>
+                  </source>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="char">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+              </ifExpr>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;}&#xA;"/>
+            <ifExpr xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Elementos_Contenidos/es_static"/>
+            </ifExpr>
+          </body>
+          <body xsi:type="mtl:IfBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;final "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Elementos_Contenidos/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
+            <body xsi:type="mtl:TemplateInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="../Elemento/generateParametro.emtl#/0/generateParametro"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="){&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipos_Datos"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateMetodosImplementados/%/%/%.1/%.7/a">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Atributos/Tipo_Datos"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateMetodosImplementados/%/%/%.1/%.7/a">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Elementos_Contenidos/nombre"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+              <loopVariable name="a">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+              </loopVariable>
+              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Atributos)">
+                <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/diagramaClases#//Metodos/atributos_contenidos"/>
+              </iterSet>
+            </body>
+            <body xsi:type="mtl:IfBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;return true;&#xA;"/>
+              <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                      <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                  </source>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="boolean">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+              </ifExpr>
+            </body>
+            <body xsi:type="mtl:IfBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;return null;&#xA;"/>
+              <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                      <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                  </source>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="String">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+              </ifExpr>
+            </body>
+            <body xsi:type="mtl:IfBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;return 0;&#xA;"/>
+              <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:OperationCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                        <source xsi:type="ocl.ecore:OperationCallExp">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                          <source xsi:type="ocl.ecore:OperationCallExp">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                              <source xsi:type="ocl.ecore:PropertyCallExp">
+                                <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                                <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                                </source>
+                                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                              </source>
+                            </source>
+                            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="int">
+                              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                            </argument>
+                            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                          </source>
+                          <argument xsi:type="ocl.ecore:OperationCallExp">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                              <source xsi:type="ocl.ecore:PropertyCallExp">
+                                <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                                <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                                </source>
+                                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                              </source>
+                            </source>
+                            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="byte">
+                              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                            </argument>
+                            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                          </argument>
+                          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                        </source>
+                        <argument xsi:type="ocl.ecore:OperationCallExp">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                            <source xsi:type="ocl.ecore:PropertyCallExp">
+                              <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                              <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                              </source>
+                              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                            </source>
+                          </source>
+                          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="short">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                          </argument>
+                          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                        </argument>
+                        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:OperationCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                        <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                          <source xsi:type="ocl.ecore:PropertyCallExp">
+                            <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                            <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                              <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                            </source>
+                            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                          </source>
+                        </source>
+                        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="long">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        </argument>
+                        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                            <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                        </source>
+                      </source>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="float">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                          <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                      </source>
+                    </source>
+                    <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="double">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                </source>
+                <argument xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <source xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                        <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                    </source>
+                  </source>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="char">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+              </ifExpr>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;}&#xA;"/>
+            <ifExpr xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Elementos_Contenidos/es_final"/>
+            </ifExpr>
+          </body>
+          <body xsi:type="mtl:IfBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Visibilidad"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Elementos_Contenidos/tipo_visibilidad"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Elementos_Contenidos/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
+            <body xsi:type="mtl:TemplateInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="../Elemento/generateParametro.emtl#/0/generateParametro"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="){&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipos_Datos"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateMetodosImplementados/%/%/%.2/%.9/a">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Atributos/Tipo_Datos"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateMetodosImplementados/%/%/%.2/%.9/a">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Elementos_Contenidos/nombre"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+              <loopVariable name="a">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+              </loopVariable>
+              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Atributos)">
+                <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/diagramaClases#//Metodos/atributos_contenidos"/>
+              </iterSet>
+            </body>
+            <body xsi:type="mtl:IfBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;return true;&#xA;"/>
+              <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                      <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                  </source>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="boolean">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+              </ifExpr>
+            </body>
+            <body xsi:type="mtl:IfBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;return null;&#xA;"/>
+              <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                      <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                  </source>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="String">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+              </ifExpr>
+            </body>
+            <body xsi:type="mtl:IfBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;return 0;&#xA;"/>
+              <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:OperationCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                        <source xsi:type="ocl.ecore:OperationCallExp">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                          <source xsi:type="ocl.ecore:OperationCallExp">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                              <source xsi:type="ocl.ecore:PropertyCallExp">
+                                <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                                <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                                </source>
+                                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                              </source>
+                            </source>
+                            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="int">
+                              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                            </argument>
+                            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                          </source>
+                          <argument xsi:type="ocl.ecore:OperationCallExp">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                              <source xsi:type="ocl.ecore:PropertyCallExp">
+                                <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                                <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                                  <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                                </source>
+                                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                              </source>
+                            </source>
+                            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="byte">
+                              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                            </argument>
+                            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                          </argument>
+                          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                        </source>
+                        <argument xsi:type="ocl.ecore:OperationCallExp">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                            <source xsi:type="ocl.ecore:PropertyCallExp">
+                              <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                              <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                                <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                              </source>
+                              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                            </source>
+                          </source>
+                          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="short">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                          </argument>
+                          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                        </argument>
+                        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:OperationCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                        <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                          <source xsi:type="ocl.ecore:PropertyCallExp">
+                            <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                            <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                              <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                            </source>
+                            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                          </source>
+                        </source>
+                        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="long">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        </argument>
+                        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                            <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                        </source>
+                      </source>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="float">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                          <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                      </source>
+                    </source>
+                    <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="double">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                </source>
+                <argument xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <source xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ecore:EEnum" href="http://www.example.org/diagramaClases#//Tipo_Retorno"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                        <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Metodos/Tipo_retorno"/>
+                    </source>
+                  </source>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="char">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+              </ifExpr>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;}&#xA;"/>
+            <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Elementos_Contenidos/es_final"/>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+              </source>
+              <argument xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="m" referredVariable="/0/generateMetodosImplementados/%/%/m">
+                    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/diagramaClases#//Elementos_Contenidos/es_static"/>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
+            </ifExpr>
+          </body>
+          <loopVariable name="m">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Metodos)">
+            <source xsi:type="ocl.ecore:VariableExp" name="i" referredVariable="/0/generateMetodosImplementados/%/i">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Interface"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/diagramaClases#//Classifier/metodos_contenidos"/>
+          </iterSet>
+        </body>
+        <loopVariable name="i">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Interface"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/6/Sequence(Interface)">
+          <source xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Implementacion)">
+            <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateMetodosImplementados/c">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Clase"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/diagramaClases#//Clase/implementacion_contenida"/>
+          </source>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Interface"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateMetodosImplementados/%/collect/temp1">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Implementacion"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/diagramaClases#//Implementacion/destino_interface"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Implementacion"/>
+          </iterator>
+        </iterSet>
+      </body>
+      <parameter name="c">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Clase"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateMetodosImplementados">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateMetodosImplementados"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="c">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Clase"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateParametro">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../Elemento/generateParametro.emtl#/0/generateParametro"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="m">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+      <eOperations name="toString">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="diagramaClases_Clase_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/diagramaClases#//Clase"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="diagramaClases_Classifier_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/diagramaClases#//Classifier"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="diagramaClases_Metodos_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/diagramaClases#//Metodos"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Clase"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Clase"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Implementacion)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Implementacion"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Interface)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Interface"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Metodos)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Atributos)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Clase"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Interface"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Interface"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Atributos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Metodos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Interface"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/diagramaClases#//Clase"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateMetodosImplementados">
+      <details key="start" value="162"/>
+      <details key="end" value="2215"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateMetodosImplementados/%">
+      <details key="start" value="220"/>
+      <details key="end" value="2203"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateMetodosImplementados/%/%">
+      <details key="start" value="289"/>
+      <details key="end" value="2196"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateMetodosImplementados/%/%/%">
+      <details key="start" value="332"/>
+      <details key="end" value="938"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateMetodosImplementados/%/%/%/%">
+      <details key="start" value="351"/>
+      <details key="end" value="359"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateMetodosImplementados/%/%/%/%.1">
+      <details key="start" value="360"/>
+      <details key="end" value="374"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateMetodosImplementados/%/%/%/%.1/m">
+      <details key="start" value="360"/>
+      <details key="end" value="361"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateMetodosImplementados/%/%/%/%.2">
+      <details key="start" value="376"/>
+      <details key="end" value="377"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateMetodosImplementados/%/%/%/%.3">
+      <details key="start" value="378"/>
+      <details key="end" value="386"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateMetodosImplementados/%/%/%/%.3/m">
+      <details key="start" value="378"/>
+      <details key="end" value="379"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateMetodosImplementados/%/%/%/%.4">
+      <details key="start" value="388"/>
+      <details key="end" value="389"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateMetodosImplementados/%/%/%/%.5">
+      <details key="start" value="390"/>
+      <details key="end" value="410"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateMetodosImplementados/%/%/%/%.5/m">
+      <details key="start" value="408"/>
+      <details key="end" value="409"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateMetodosImplementados/%/%/%/%.6">
+      <details key="start" value="412"/>
+      <details key="end" value="415"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateMetodosImplementados/%/%/%/%.7">
+      <details key="start" value="416"/>
+      <details key="end" value="501"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateMetodosImplementados/%/%/%/%.7/%">
+      <details key="start" value="463"/>
+      <details key="end" value="465"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateMetodosImplementados/%/%/%/%.7/%.1">
+      <details key="start" value="466"/>
+      <details key="end" value="478"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateMetodosImplementados/%/%/%/%.7/%.1/a">
+      <details key="start" value="466"/>
+      <details key="end" value="467"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateMetodosImplementados/%/%/%/%.7/%.2">
+      <details key="start" value="480"/>
+      <details key="end" value="481"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateMetodosImplementados/%/%/%/%.7/%.3">
+      <details key="start" value="482"/>
+      <details key="end" value="490"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateMetodosImplementados/%/%/%/%.7/%.3/a">
+      <details key="start" value="482"/>
+      <details key="end" value="483"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateMetodosImplementados/%/%/%/%.7/%.4">
+      <details key="start" value="492"/>
+      <details key="end" value="494"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateMetodosImplementados/%/%/%/%.7/a">
+      <details key="start" value="422"/>
+      <details key="end" value="435"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateMetodosImplementados/%/%/%/%.7/%.5">
+      <details key="start" value="438"/>
+      <details key="end" value="460"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateMetodosImplementados/%/%/%/%.7/%.5/m">
+      <details key="start" value="438"/>
+      <details key="end" value="439"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateMetodosImplementados/%/%/%/%.8">
+      <details key="start" value="503"/>
+      <details key="end" value="569"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateMetodosImplementados/%/%/%/%.8/%">
+      <details key="start" value="548"/>
+      <details key="end" value="563"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateMetodosImplementados/%/%/%/%.8/%.1">
+      <details key="start" value="507"/>
+      <details key="end" value="546"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateMetodosImplementados/%/%/%/%.8/%.1/%">
+      <details key="start" value="508"/>
+      <details key="end" value="533"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateMetodosImplementados/%/%/%/%.8/%.1/%/%">
+      <details key="start" value="508"/>
+      <details key="end" value="522"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateMetodosImplementados/%/%/%/%.8/%.1/%/%/m">
+      <details key="start" value="508"/>
+      <details key="end" value="509"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateMetodosImplementados/%/%/%/%.8/%.1/%.1">
+      <details key="start" value="536"/>
+      <details key="end" value="545"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateMetodosImplementados/%/%/%/%.9">
+      <details key="start" value="571"/>
+      <details key="end" value="636"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateMetodosImplementados/%/%/%/%.9/%">
+      <details key="start" value="615"/>
+      <details key="end" value="630"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateMetodosImplementados/%/%/%/%.9/%.1">
+      <details key="start" value="575"/>
+      <details key="end" value="613"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateMetodosImplementados/%/%/%/%.9/%.1/%">
+      <details key="start" value="576"/>
+      <details key="end" value="601"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generateMetodosImplementados/%/%/%/%.9/%.1/%/%">
+      <details key="start" value="576"/>
+      <details key="end" value="590"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateMetodosImplementados/%/%/%/%.9/%.1/%/%/m">
+      <details key="start" value="576"/>
+      <details key="end" value="577"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateMetodosImplementados/%/%/%/%.9/%.1/%.1">
+      <details key="start" value="604"/>
+      <details key="end" value="612"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateMetodosImplementados/%/%/%/%.10">
+      <details key="start" value="638"/>
+      <details key="end" value="929"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateMetodosImplementados/%/%/%/%.10/%">
+      <details key="start" value="911"/>
+      <details key="end" value="923"/>
+      <details key="line" value="21"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1">
+      <details key="start" value="642"/>
+      <details key="end" value="909"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%">
+      <details key="start" value="643"/>
+      <details key="end" value="870"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%">
+      <details key="start" value="643"/>
+      <details key="end" value="830"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%">
+      <details key="start" value="643"/>
+      <details key="end" value="791"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%">
+      <details key="start" value="643"/>
+      <details key="end" value="753"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%">
+      <details key="start" value="643"/>
+      <details key="end" value="714"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%/%">
+      <details key="start" value="643"/>
+      <details key="end" value="676"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%/%/%">
+      <details key="start" value="643"/>
+      <details key="end" value="668"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%/%/%/%">
+      <details key="start" value="643"/>
+      <details key="end" value="657"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%/%/%/%/m">
+      <details key="start" value="643"/>
+      <details key="end" value="644"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%/%/%.1">
+      <details key="start" value="671"/>
+      <details key="end" value="676"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%/%.1">
+      <details key="start" value="680"/>
+      <details key="end" value="714"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%/%.1/%">
+      <details key="start" value="680"/>
+      <details key="end" value="705"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%/%.1/%/%">
+      <details key="start" value="680"/>
+      <details key="end" value="694"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%/%.1/%/%/m">
+      <details key="start" value="680"/>
+      <details key="end" value="681"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%/%.1/%.1">
+      <details key="start" value="708"/>
+      <details key="end" value="714"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%.1">
+      <details key="start" value="718"/>
+      <details key="end" value="753"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%.1/%">
+      <details key="start" value="718"/>
+      <details key="end" value="743"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%.1/%/%">
+      <details key="start" value="718"/>
+      <details key="end" value="732"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%.1/%/%/m">
+      <details key="start" value="718"/>
+      <details key="end" value="719"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%/%.1/%.1">
+      <details key="start" value="746"/>
+      <details key="end" value="753"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%.1">
+      <details key="start" value="757"/>
+      <details key="end" value="791"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%.1/%">
+      <details key="start" value="757"/>
+      <details key="end" value="782"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%.1/%/%">
+      <details key="start" value="757"/>
+      <details key="end" value="771"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%.1/%/%/m">
+      <details key="start" value="757"/>
+      <details key="end" value="758"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%/%.1/%.1">
+      <details key="start" value="785"/>
+      <details key="end" value="791"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%.1">
+      <details key="start" value="795"/>
+      <details key="end" value="830"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%.1/%">
+      <details key="start" value="795"/>
+      <details key="end" value="820"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%.1/%/%">
+      <details key="start" value="795"/>
+      <details key="end" value="809"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%.1/%/%/m">
+      <details key="start" value="795"/>
+      <details key="end" value="796"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%/%.1/%.1">
+      <details key="start" value="823"/>
+      <details key="end" value="830"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%.1">
+      <details key="start" value="834"/>
+      <details key="end" value="870"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%.1/%">
+      <details key="start" value="834"/>
+      <details key="end" value="859"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%.1/%/%">
+      <details key="start" value="834"/>
+      <details key="end" value="848"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%.1/%/%/m">
+      <details key="start" value="834"/>
+      <details key="end" value="835"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%/%.1/%.1">
+      <details key="start" value="862"/>
+      <details key="end" value="870"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%.1">
+      <details key="start" value="874"/>
+      <details key="end" value="908"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%.1/%">
+      <details key="start" value="874"/>
+      <details key="end" value="899"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%.1/%/%">
+      <details key="start" value="874"/>
+      <details key="end" value="888"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%.1/%/%/m">
+      <details key="start" value="874"/>
+      <details key="end" value="875"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/generateMetodosImplementados/%/%/%/%.10/%.1/%.1/%.1">
+      <details key="start" value="902"/>
+      <details key="end" value="908"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/generateMetodosImplementados/%/%/%/%.11">
+      <details key="start" value="930"/>
+      <details key="end" value="933"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/generateMetodosImplementados/%/%/%/%.12">
+      <details key="start" value="336"/>
+      <details key="end" value="349"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/generateMetodosImplementados/%/%/%/%.12/m">
+      <details key="start" value="337"/>
+      <details key="end" value="338"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/generateMetodosImplementados/%/%/%.1">
+      <details key="start" value="940"/>
+      <details key="end" value="1544"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/generateMetodosImplementados/%/%/%.1/%">
+      <details key="start" value="958"/>
+      <details key="end" value="965"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/generateMetodosImplementados/%/%/%.1/%.1">
+      <details key="start" value="966"/>
+      <details key="end" value="980"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/generateMetodosImplementados/%/%/%.1/%.1/m">
+      <details key="start" value="966"/>
+      <details key="end" value="967"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/generateMetodosImplementados/%/%/%.1/%.2">
+      <details key="start" value="982"/>
+      <details key="end" value="983"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/generateMetodosImplementados/%/%/%.1/%.3">
+      <details key="start" value="984"/>
+      <details key="end" value="992"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/generateMetodosImplementados/%/%/%.1/%.3/m">
+      <details key="start" value="984"/>
+      <details key="end" value="985"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/generateMetodosImplementados/%/%/%.1/%.4">
+      <details key="start" value="994"/>
+      <details key="end" value="995"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/generateMetodosImplementados/%/%/%.1/%.5">
+      <details key="start" value="996"/>
+      <details key="end" value="1016"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/generateMetodosImplementados/%/%/%.1/%.5/m">
+      <details key="start" value="1014"/>
+      <details key="end" value="1015"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/generateMetodosImplementados/%/%/%.1/%.6">
+      <details key="start" value="1018"/>
+      <details key="end" value="1021"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/generateMetodosImplementados/%/%/%.1/%.7">
+      <details key="start" value="1022"/>
+      <details key="end" value="1107"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/generateMetodosImplementados/%/%/%.1/%.7/%">
+      <details key="start" value="1069"/>
+      <details key="end" value="1071"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/generateMetodosImplementados/%/%/%.1/%.7/%.1">
+      <details key="start" value="1072"/>
+      <details key="end" value="1084"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/generateMetodosImplementados/%/%/%.1/%.7/%.1/a">
+      <details key="start" value="1072"/>
+      <details key="end" value="1073"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/generateMetodosImplementados/%/%/%.1/%.7/%.2">
+      <details key="start" value="1086"/>
+      <details key="end" value="1087"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/generateMetodosImplementados/%/%/%.1/%.7/%.3">
+      <details key="start" value="1088"/>
+      <details key="end" value="1096"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/generateMetodosImplementados/%/%/%.1/%.7/%.3/a">
+      <details key="start" value="1088"/>
+      <details key="end" value="1089"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/generateMetodosImplementados/%/%/%.1/%.7/%.4">
+      <details key="start" value="1098"/>
+      <details key="end" value="1100"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/generateMetodosImplementados/%/%/%.1/%.7/a">
+      <details key="start" value="1028"/>
+      <details key="end" value="1041"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/generateMetodosImplementados/%/%/%.1/%.7/%.5">
+      <details key="start" value="1044"/>
+      <details key="end" value="1066"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/generateMetodosImplementados/%/%/%.1/%.7/%.5/m">
+      <details key="start" value="1044"/>
+      <details key="end" value="1045"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/generateMetodosImplementados/%/%/%.1/%.8">
+      <details key="start" value="1109"/>
+      <details key="end" value="1175"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/generateMetodosImplementados/%/%/%.1/%.8/%">
+      <details key="start" value="1154"/>
+      <details key="end" value="1169"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/generateMetodosImplementados/%/%/%.1/%.8/%.1">
+      <details key="start" value="1113"/>
+      <details key="end" value="1152"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/generateMetodosImplementados/%/%/%.1/%.8/%.1/%">
+      <details key="start" value="1114"/>
+      <details key="end" value="1139"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/generateMetodosImplementados/%/%/%.1/%.8/%.1/%/%">
+      <details key="start" value="1114"/>
+      <details key="end" value="1128"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/generateMetodosImplementados/%/%/%.1/%.8/%.1/%/%/m">
+      <details key="start" value="1114"/>
+      <details key="end" value="1115"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/generateMetodosImplementados/%/%/%.1/%.8/%.1/%.1">
+      <details key="start" value="1142"/>
+      <details key="end" value="1151"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/generateMetodosImplementados/%/%/%.1/%.9">
+      <details key="start" value="1177"/>
+      <details key="end" value="1242"/>
+      <details key="line" value="33"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/generateMetodosImplementados/%/%/%.1/%.9/%">
+      <details key="start" value="1221"/>
+      <details key="end" value="1236"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/generateMetodosImplementados/%/%/%.1/%.9/%.1">
+      <details key="start" value="1181"/>
+      <details key="end" value="1219"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/generateMetodosImplementados/%/%/%.1/%.9/%.1/%">
+      <details key="start" value="1182"/>
+      <details key="end" value="1207"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/generateMetodosImplementados/%/%/%.1/%.9/%.1/%/%">
+      <details key="start" value="1182"/>
+      <details key="end" value="1196"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/generateMetodosImplementados/%/%/%.1/%.9/%.1/%/%/m">
+      <details key="start" value="1182"/>
+      <details key="end" value="1183"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/generateMetodosImplementados/%/%/%.1/%.9/%.1/%.1">
+      <details key="start" value="1210"/>
+      <details key="end" value="1218"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/generateMetodosImplementados/%/%/%.1/%.10">
+      <details key="start" value="1244"/>
+      <details key="end" value="1535"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%">
+      <details key="start" value="1517"/>
+      <details key="end" value="1529"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1">
+      <details key="start" value="1248"/>
+      <details key="end" value="1515"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%">
+      <details key="start" value="1249"/>
+      <details key="end" value="1476"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%">
+      <details key="start" value="1249"/>
+      <details key="end" value="1436"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%">
+      <details key="start" value="1249"/>
+      <details key="end" value="1397"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%">
+      <details key="start" value="1249"/>
+      <details key="end" value="1359"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%">
+      <details key="start" value="1249"/>
+      <details key="end" value="1320"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%/%">
+      <details key="start" value="1249"/>
+      <details key="end" value="1282"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%/%/%">
+      <details key="start" value="1249"/>
+      <details key="end" value="1274"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%/%/%/%">
+      <details key="start" value="1249"/>
+      <details key="end" value="1263"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%/%/%/%/m">
+      <details key="start" value="1249"/>
+      <details key="end" value="1250"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%/%/%.1">
+      <details key="start" value="1277"/>
+      <details key="end" value="1282"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%/%.1">
+      <details key="start" value="1286"/>
+      <details key="end" value="1320"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%/%.1/%">
+      <details key="start" value="1286"/>
+      <details key="end" value="1311"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%/%.1/%/%">
+      <details key="start" value="1286"/>
+      <details key="end" value="1300"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%/%.1/%/%/m">
+      <details key="start" value="1286"/>
+      <details key="end" value="1287"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%/%.1/%.1">
+      <details key="start" value="1314"/>
+      <details key="end" value="1320"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%.1">
+      <details key="start" value="1324"/>
+      <details key="end" value="1359"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%.1/%">
+      <details key="start" value="1324"/>
+      <details key="end" value="1349"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%.1/%/%">
+      <details key="start" value="1324"/>
+      <details key="end" value="1338"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%.1/%/%/m">
+      <details key="start" value="1324"/>
+      <details key="end" value="1325"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%/%.1/%.1">
+      <details key="start" value="1352"/>
+      <details key="end" value="1359"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%.1">
+      <details key="start" value="1363"/>
+      <details key="end" value="1397"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%.1/%">
+      <details key="start" value="1363"/>
+      <details key="end" value="1388"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.146" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%.1/%/%">
+      <details key="start" value="1363"/>
+      <details key="end" value="1377"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.147" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%.1/%/%/m">
+      <details key="start" value="1363"/>
+      <details key="end" value="1364"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.148" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%/%.1/%.1">
+      <details key="start" value="1391"/>
+      <details key="end" value="1397"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.149" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%.1">
+      <details key="start" value="1401"/>
+      <details key="end" value="1436"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.150" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%.1/%">
+      <details key="start" value="1401"/>
+      <details key="end" value="1426"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.151" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%.1/%/%">
+      <details key="start" value="1401"/>
+      <details key="end" value="1415"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.152" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%.1/%/%/m">
+      <details key="start" value="1401"/>
+      <details key="end" value="1402"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%/%.1/%.1">
+      <details key="start" value="1429"/>
+      <details key="end" value="1436"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%.1">
+      <details key="start" value="1440"/>
+      <details key="end" value="1476"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%.1/%">
+      <details key="start" value="1440"/>
+      <details key="end" value="1465"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%.1/%/%">
+      <details key="start" value="1440"/>
+      <details key="end" value="1454"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%.1/%/%/m">
+      <details key="start" value="1440"/>
+      <details key="end" value="1441"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.158" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%/%.1/%.1">
+      <details key="start" value="1468"/>
+      <details key="end" value="1476"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.159" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%.1">
+      <details key="start" value="1480"/>
+      <details key="end" value="1514"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.160" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%.1/%">
+      <details key="start" value="1480"/>
+      <details key="end" value="1505"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.161" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%.1/%/%">
+      <details key="start" value="1480"/>
+      <details key="end" value="1494"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.162" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%.1/%/%/m">
+      <details key="start" value="1480"/>
+      <details key="end" value="1481"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.163" references="/0/generateMetodosImplementados/%/%/%.1/%.10/%.1/%.1/%.1">
+      <details key="start" value="1508"/>
+      <details key="end" value="1514"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.164" references="/0/generateMetodosImplementados/%/%/%.1/%.11">
+      <details key="start" value="1536"/>
+      <details key="end" value="1539"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.165" references="/0/generateMetodosImplementados/%/%/%.1/%.12">
+      <details key="start" value="944"/>
+      <details key="end" value="956"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.166" references="/0/generateMetodosImplementados/%/%/%.1/%.12/m">
+      <details key="start" value="945"/>
+      <details key="end" value="946"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.167" references="/0/generateMetodosImplementados/%/%/%.2">
+      <details key="start" value="1545"/>
+      <details key="end" value="2189"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.168" references="/0/generateMetodosImplementados/%/%/%.2/%">
+      <details key="start" value="1587"/>
+      <details key="end" value="1588"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.169" references="/0/generateMetodosImplementados/%/%/%.2/%.1">
+      <details key="start" value="1589"/>
+      <details key="end" value="1607"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.170" references="/0/generateMetodosImplementados/%/%/%.2/%.1/m">
+      <details key="start" value="1589"/>
+      <details key="end" value="1590"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.171" references="/0/generateMetodosImplementados/%/%/%.2/%.2">
+      <details key="start" value="1609"/>
+      <details key="end" value="1610"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.172" references="/0/generateMetodosImplementados/%/%/%.2/%.3">
+      <details key="start" value="1611"/>
+      <details key="end" value="1625"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.173" references="/0/generateMetodosImplementados/%/%/%.2/%.3/m">
+      <details key="start" value="1611"/>
+      <details key="end" value="1612"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.174" references="/0/generateMetodosImplementados/%/%/%.2/%.4">
+      <details key="start" value="1627"/>
+      <details key="end" value="1628"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.175" references="/0/generateMetodosImplementados/%/%/%.2/%.5">
+      <details key="start" value="1629"/>
+      <details key="end" value="1637"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.176" references="/0/generateMetodosImplementados/%/%/%.2/%.5/m">
+      <details key="start" value="1629"/>
+      <details key="end" value="1630"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.177" references="/0/generateMetodosImplementados/%/%/%.2/%.6">
+      <details key="start" value="1639"/>
+      <details key="end" value="1640"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.178" references="/0/generateMetodosImplementados/%/%/%.2/%.7">
+      <details key="start" value="1641"/>
+      <details key="end" value="1661"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.179" references="/0/generateMetodosImplementados/%/%/%.2/%.7/m">
+      <details key="start" value="1659"/>
+      <details key="end" value="1660"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.180" references="/0/generateMetodosImplementados/%/%/%.2/%.8">
+      <details key="start" value="1663"/>
+      <details key="end" value="1666"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.181" references="/0/generateMetodosImplementados/%/%/%.2/%.9">
+      <details key="start" value="1667"/>
+      <details key="end" value="1752"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.182" references="/0/generateMetodosImplementados/%/%/%.2/%.9/%">
+      <details key="start" value="1714"/>
+      <details key="end" value="1716"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.183" references="/0/generateMetodosImplementados/%/%/%.2/%.9/%.1">
+      <details key="start" value="1717"/>
+      <details key="end" value="1729"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.184" references="/0/generateMetodosImplementados/%/%/%.2/%.9/%.1/a">
+      <details key="start" value="1717"/>
+      <details key="end" value="1718"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.185" references="/0/generateMetodosImplementados/%/%/%.2/%.9/%.2">
+      <details key="start" value="1731"/>
+      <details key="end" value="1732"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.186" references="/0/generateMetodosImplementados/%/%/%.2/%.9/%.3">
+      <details key="start" value="1733"/>
+      <details key="end" value="1741"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.187" references="/0/generateMetodosImplementados/%/%/%.2/%.9/%.3/a">
+      <details key="start" value="1733"/>
+      <details key="end" value="1734"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.188" references="/0/generateMetodosImplementados/%/%/%.2/%.9/%.4">
+      <details key="start" value="1743"/>
+      <details key="end" value="1745"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.189" references="/0/generateMetodosImplementados/%/%/%.2/%.9/a">
+      <details key="start" value="1673"/>
+      <details key="end" value="1686"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.190" references="/0/generateMetodosImplementados/%/%/%.2/%.9/%.5">
+      <details key="start" value="1689"/>
+      <details key="end" value="1711"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.191" references="/0/generateMetodosImplementados/%/%/%.2/%.9/%.5/m">
+      <details key="start" value="1689"/>
+      <details key="end" value="1690"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.192" references="/0/generateMetodosImplementados/%/%/%.2/%.10">
+      <details key="start" value="1754"/>
+      <details key="end" value="1820"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.193" references="/0/generateMetodosImplementados/%/%/%.2/%.10/%">
+      <details key="start" value="1799"/>
+      <details key="end" value="1814"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.194" references="/0/generateMetodosImplementados/%/%/%.2/%.10/%.1">
+      <details key="start" value="1758"/>
+      <details key="end" value="1797"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.195" references="/0/generateMetodosImplementados/%/%/%.2/%.10/%.1/%">
+      <details key="start" value="1759"/>
+      <details key="end" value="1784"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.196" references="/0/generateMetodosImplementados/%/%/%.2/%.10/%.1/%/%">
+      <details key="start" value="1759"/>
+      <details key="end" value="1773"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.197" references="/0/generateMetodosImplementados/%/%/%.2/%.10/%.1/%/%/m">
+      <details key="start" value="1759"/>
+      <details key="end" value="1760"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.198" references="/0/generateMetodosImplementados/%/%/%.2/%.10/%.1/%.1">
+      <details key="start" value="1787"/>
+      <details key="end" value="1796"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.199" references="/0/generateMetodosImplementados/%/%/%.2/%.11">
+      <details key="start" value="1822"/>
+      <details key="end" value="1887"/>
+      <details key="line" value="49"/>
+    </eAnnotations>
+    <eAnnotations source="positions.200" references="/0/generateMetodosImplementados/%/%/%.2/%.11/%">
+      <details key="start" value="1866"/>
+      <details key="end" value="1881"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.201" references="/0/generateMetodosImplementados/%/%/%.2/%.11/%.1">
+      <details key="start" value="1826"/>
+      <details key="end" value="1864"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.202" references="/0/generateMetodosImplementados/%/%/%.2/%.11/%.1/%">
+      <details key="start" value="1827"/>
+      <details key="end" value="1852"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.203" references="/0/generateMetodosImplementados/%/%/%.2/%.11/%.1/%/%">
+      <details key="start" value="1827"/>
+      <details key="end" value="1841"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.204" references="/0/generateMetodosImplementados/%/%/%.2/%.11/%.1/%/%/m">
+      <details key="start" value="1827"/>
+      <details key="end" value="1828"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.205" references="/0/generateMetodosImplementados/%/%/%.2/%.11/%.1/%.1">
+      <details key="start" value="1855"/>
+      <details key="end" value="1863"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.206" references="/0/generateMetodosImplementados/%/%/%.2/%.12">
+      <details key="start" value="1889"/>
+      <details key="end" value="2180"/>
+      <details key="line" value="52"/>
+    </eAnnotations>
+    <eAnnotations source="positions.207" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%">
+      <details key="start" value="2162"/>
+      <details key="end" value="2174"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.208" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1">
+      <details key="start" value="1893"/>
+      <details key="end" value="2160"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.209" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%">
+      <details key="start" value="1894"/>
+      <details key="end" value="2121"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.210" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%">
+      <details key="start" value="1894"/>
+      <details key="end" value="2081"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.211" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%">
+      <details key="start" value="1894"/>
+      <details key="end" value="2042"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.212" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%">
+      <details key="start" value="1894"/>
+      <details key="end" value="2004"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.213" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%">
+      <details key="start" value="1894"/>
+      <details key="end" value="1965"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.214" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%/%">
+      <details key="start" value="1894"/>
+      <details key="end" value="1927"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.215" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%/%/%">
+      <details key="start" value="1894"/>
+      <details key="end" value="1919"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.216" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%/%/%/%">
+      <details key="start" value="1894"/>
+      <details key="end" value="1908"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.217" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%/%/%/%/m">
+      <details key="start" value="1894"/>
+      <details key="end" value="1895"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.218" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%/%/%.1">
+      <details key="start" value="1922"/>
+      <details key="end" value="1927"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.219" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%/%.1">
+      <details key="start" value="1931"/>
+      <details key="end" value="1965"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.220" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%/%.1/%">
+      <details key="start" value="1931"/>
+      <details key="end" value="1956"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.221" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%/%.1/%/%">
+      <details key="start" value="1931"/>
+      <details key="end" value="1945"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.222" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%/%.1/%/%/m">
+      <details key="start" value="1931"/>
+      <details key="end" value="1932"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.223" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%/%.1/%.1">
+      <details key="start" value="1959"/>
+      <details key="end" value="1965"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.224" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%.1">
+      <details key="start" value="1969"/>
+      <details key="end" value="2004"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.225" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%.1/%">
+      <details key="start" value="1969"/>
+      <details key="end" value="1994"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.226" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%.1/%/%">
+      <details key="start" value="1969"/>
+      <details key="end" value="1983"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.227" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%.1/%/%/m">
+      <details key="start" value="1969"/>
+      <details key="end" value="1970"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.228" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%/%.1/%.1">
+      <details key="start" value="1997"/>
+      <details key="end" value="2004"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.229" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%.1">
+      <details key="start" value="2008"/>
+      <details key="end" value="2042"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.230" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%.1/%">
+      <details key="start" value="2008"/>
+      <details key="end" value="2033"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.231" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%.1/%/%">
+      <details key="start" value="2008"/>
+      <details key="end" value="2022"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.232" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%.1/%/%/m">
+      <details key="start" value="2008"/>
+      <details key="end" value="2009"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.233" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%/%.1/%.1">
+      <details key="start" value="2036"/>
+      <details key="end" value="2042"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.234" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%.1">
+      <details key="start" value="2046"/>
+      <details key="end" value="2081"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.235" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%.1/%">
+      <details key="start" value="2046"/>
+      <details key="end" value="2071"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.236" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%.1/%/%">
+      <details key="start" value="2046"/>
+      <details key="end" value="2060"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.237" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%.1/%/%/m">
+      <details key="start" value="2046"/>
+      <details key="end" value="2047"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.238" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%/%.1/%.1">
+      <details key="start" value="2074"/>
+      <details key="end" value="2081"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.239" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%.1">
+      <details key="start" value="2085"/>
+      <details key="end" value="2121"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.240" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%.1/%">
+      <details key="start" value="2085"/>
+      <details key="end" value="2110"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.241" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%.1/%/%">
+      <details key="start" value="2085"/>
+      <details key="end" value="2099"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.242" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%.1/%/%/m">
+      <details key="start" value="2085"/>
+      <details key="end" value="2086"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.243" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%/%.1/%.1">
+      <details key="start" value="2113"/>
+      <details key="end" value="2121"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.244" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%.1">
+      <details key="start" value="2125"/>
+      <details key="end" value="2159"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.245" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%.1/%">
+      <details key="start" value="2125"/>
+      <details key="end" value="2150"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.246" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%.1/%/%">
+      <details key="start" value="2125"/>
+      <details key="end" value="2139"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.247" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%.1/%/%/m">
+      <details key="start" value="2125"/>
+      <details key="end" value="2126"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.248" references="/0/generateMetodosImplementados/%/%/%.2/%.12/%.1/%.1/%.1">
+      <details key="start" value="2153"/>
+      <details key="end" value="2159"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.249" references="/0/generateMetodosImplementados/%/%/%.2/%.13">
+      <details key="start" value="2181"/>
+      <details key="end" value="2184"/>
+      <details key="line" value="55"/>
+    </eAnnotations>
+    <eAnnotations source="positions.250" references="/0/generateMetodosImplementados/%/%/%.2/%.14">
+      <details key="start" value="1549"/>
+      <details key="end" value="1585"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.251" references="/0/generateMetodosImplementados/%/%/%.2/%.14/%">
+      <details key="start" value="1550"/>
+      <details key="end" value="1564"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.252" references="/0/generateMetodosImplementados/%/%/%.2/%.14/%/%">
+      <details key="start" value="1554"/>
+      <details key="end" value="1564"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.253" references="/0/generateMetodosImplementados/%/%/%.2/%.14/%/%/m">
+      <details key="start" value="1554"/>
+      <details key="end" value="1555"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.254" references="/0/generateMetodosImplementados/%/%/%.2/%.14/%.1">
+      <details key="start" value="1569"/>
+      <details key="end" value="1584"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.255" references="/0/generateMetodosImplementados/%/%/%.2/%.14/%.1/%">
+      <details key="start" value="1573"/>
+      <details key="end" value="1584"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.256" references="/0/generateMetodosImplementados/%/%/%.2/%.14/%.1/%/m">
+      <details key="start" value="1573"/>
+      <details key="end" value="1574"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.257" references="/0/generateMetodosImplementados/%/%/m">
+      <details key="start" value="295"/>
+      <details key="end" value="306"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.258" references="/0/generateMetodosImplementados/%/%/%.3">
+      <details key="start" value="309"/>
+      <details key="end" value="329"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.259" references="/0/generateMetodosImplementados/%/%/%.3/i">
+      <details key="start" value="309"/>
+      <details key="end" value="310"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.260" references="/0/generateMetodosImplementados/%/i">
+      <details key="start" value="226"/>
+      <details key="end" value="239"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.261" references="/0/generateMetodosImplementados/%/collect">
+      <details key="start" value="242"/>
+      <details key="end" value="286"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.262" references="/0/generateMetodosImplementados/%/collect/%">
+      <details key="start" value="242"/>
+      <details key="end" value="268"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.263" references="/0/generateMetodosImplementados/%/collect/%/c">
+      <details key="start" value="242"/>
+      <details key="end" value="243"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.264" references="/0/generateMetodosImplementados/%/collect/%.1">
+      <details key="start" value="269"/>
+      <details key="end" value="286"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.265" references="/0/generateMetodosImplementados/%/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.266" references="/0/generateMetodosImplementados/%/collect/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.267" references="/0/generateMetodosImplementados/c">
+      <details key="start" value="208"/>
+      <details key="end" value="217"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

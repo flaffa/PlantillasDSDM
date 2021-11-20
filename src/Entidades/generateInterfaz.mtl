@@ -1,0 +1,19 @@
+[comment encoding = UTF-8 /]
+[module generateInterfaz('http://www.example.org/diagramaClases')]
+[import generateAtributo/]
+[import generateMetodo/]
+[import generateHerencia/]
+
+[template public generateInterfaz(d : DiagramadeClases)]
+[for (p: Paquete | d.paquetes_contenidos)]
+	[for (i : Interface | p.classifier_contenido->filter(Interface))]
+		[file ('src/main/java/'+ d.artefactos_contenidos.groupID.substituteAll('.', '/')+'/'+ d.artefactos_contenidos.artefactID+'/entidades/'+p.nombre+'/'+i.nombre+'.java', false, 'UTF-8')]
+		package [d.artefactos_contenidos.groupID+'.'+d.artefactos_contenidos.artefactID+'.'+ p.nombre/];
+		public interface [i.nombre/] [generateHerencia(i)/]{
+				[generateAtributo(i)/]
+				[generateMetodo(i)/]
+		}
+	[/file]
+	[/for]
+[/for]
+[/template]

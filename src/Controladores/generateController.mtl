@@ -1,0 +1,30 @@
+[comment encoding = UTF-8 /]
+[module generateController('http://www.example.org/diagramaClases')]
+
+
+[template public generateController(d : DiagramadeClases)]
+[for (p: Paquete | d.paquetes_contenidos)]
+	[for (c : Clase | p.classifier_contenido->filter(Clase))]
+[if (c.tieneABM)]
+[file ('src/main/java/'+ d.artefactos_contenidos.groupID.substituteAll('.', '/')+'/'+ d.artefactos_contenidos.artefactID+'/controladores/'+c.nombre+'Controller.java', false, 'UTF-8')]
+package [d.artefactos_contenidos.groupID+'.'+d.artefactos_contenidos.artefactID/].controllers;
+	
+import [d.artefactos_contenidos.groupID/].[d.artefactos_contenidos.artefactID/].servicios.[d.paquetes_contenidos.classifier_contenido.nombre/]ServiceImp;
+import [d.artefactos_contenidos.groupID/].[d.artefactos_contenidos.artefactID/].entidades.[d.paquetes_contenidos.classifier_contenido.nombre/];
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+	
+	@RestController
+	@CrossOrigin (origins = "*")
+	@RequestMapping (path = "api/v1/[c.nombre.toLowerFirst()/]")
+
+    public class [c.nombre/]Controller extends BaseControllerImp <[c.nombre/], [c.nombre/]ServiceImp>{
+        
+    }
+[/file]
+[/if]
+[/for]
+[/for]
+[/template]
